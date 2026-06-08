@@ -1,0 +1,525 @@
+{
+  "meta": {
+    "title": "Desde aquella regla",
+    "subtitle": "Una caja fuerte de recuerdos para Shere",
+    "for": "Shere",
+    "year": 2026
+  },
+  "chapters": [
+    {
+      "id": "la-ruta",
+      "number": 1,
+      "title": "La Ruta",
+      "subtitle": "Donde todo empezó a moverse",
+      "description": "Hay rutas que uno toma por costumbre. Y hay una — la de un bus normal — que cambió algo sin pedir permiso.",
+      "paragraphs": [
+        "Un bus normal. Las mismas paradas, el mismo ruido de fondo, ese vaivén de siempre.",
+        "A veces ibas sentada. A veces íbamos parados, agarrados al tubo o balanceándonos con la curva cuando no había lugar.",
+        "Hasta que un día las miradas empezaron a durar un poco más. Y las sonrisas, a cruzarse sin que nadie lo planeara.",
+        "No había discurso. No había escena. Solo ese trayecto compartido — sentados o de pie — y algo que empezó a moverse sin pedir permiso."
+      ],
+      "quote": "Ese bus fue el primer capítulo.",
+      "detail": "RUTA DE SIEMPRE · SHERE"
+    },
+    {
+      "id": "la-regla",
+      "number": 2,
+      "title": "La Regla",
+      "subtitle": "12 pulgadas de historia",
+      "quote": "Hay objetos que miden distancias. Esta fue la primera que decidió acortarlas.",
+      "body": "Una amiga tuya pidió prestada una regla. Cuando la devolvieron, tenía escrito tu número — el de Shere. Doce pulgadas de plástico común. El símbolo de todo lo demás.",
+      "rulerText": "Shere ✦ tu número"
+    },
+    {
+      "id": "el-parque",
+      "number": 3,
+      "title": "El Parque de la Shere",
+      "subtitle": "Nuestro rincón favorito bajo el cielo",
+      "paragraphs": [
+        "Para el resto del mundo era el Parque de la Luz. Para nosotros, el Parque de la Shere — sin letrero, sin votación, solo acuerdo.",
+        "Era el lugar donde el ruido del día se quedaba afuera. Donde volver ya no era casualidad."
+      ],
+      "quote": "Este lugar siempre va a saber que estuvimos aquí."
+    },
+    {
+      "id": "multiverso",
+      "number": 4,
+      "title": "Nuestro Multiverso Marvel",
+      "subtitle": "Tú con Spider-Man. Yo con Iron Man.",
+      "intro": "Compartíamos Marvel como quien comparte un idioma. Tú con Tom Holland en la cabeza. Yo más de Iron Man. Mismo universo, héroes distintos.",
+      "heroes": [
+        {
+          "id": "spiderman",
+          "name": "Spider-Man",
+          "emoji": "🕷️",
+          "color": "#c0392b",
+          "tagline": "Con gran poder viene gran responsabilidad.",
+          "memory": "Tu héroe. El de Tom Holland. Te recuerdo cuidando de los tuyos, levantándote cuando caes, siendo fuerte sin hacer ruido. Así eres tú, Shere."
+        },
+        {
+          "id": "ironman",
+          "name": "Iron Man",
+          "emoji": "🔴",
+          "color": "#c0392b",
+          "tagline": "Yo soy Iron Man.",
+          "memory": "El mío. La armadura que uno construye cuando la vida pide madurez antes de tiempo. No es solo tecnología — es aprender, cambiar, quedarse."
+        },
+        {
+          "id": "doctorstrange",
+          "name": "Doctor Strange",
+          "emoji": "🌀",
+          "color": "#8e44ad",
+          "tagline": "Hay un solo camino posible... y mil formas de llegar.",
+          "memory": "Para las líneas del tiempo. Los años que pasaron, las distancias, los universos que se separaron y volvieron a tocarse. Vivimos algunos de esos caminos."
+        },
+        {
+          "id": "loki",
+          "name": "Loki",
+          "emoji": "🐱",
+          "color": "#e67e22",
+          "tagline": "El dios de las mentiras... y de los gatos naranjas.",
+          "memory": "No el de Asgard — el tuyo. Tu gato naranja Loki, que se acostaba en mis piernas como si ese lugar le perteneciera desde siempre."
+        },
+        {
+          "id": "thanos",
+          "name": "Thanos",
+          "emoji": "💜",
+          "color": "#6c3483",
+          "tagline": "El tiempo, inevitable.",
+          "memory": "Metáfora de los años que nos separaron. No como villano — como fuerza que pasa, que aleja, que a veces devuelve. El tiempo hizo lo suyo. Y aun así, aquí estamos."
+        }
+      ]
+    },
+    {
+      "id": "loki-chapter",
+      "number": 5,
+      "title": "Loki y otros personajes importantes",
+      "subtitle": "El elenco que no pedimos pero merecemos",
+      "closingNote": "Los mejores personajes son los que te hacen querer quedarte un rato más.",
+      "characters": [
+        {
+          "id": "loki-cat",
+          "name": "Loki",
+          "title": "El gato naranja",
+          "emoji": "🐱",
+          "quote": "\"Se acostaba en mis piernas como si fuera su trono.\"",
+          "color": "#e67e22",
+          "note": "Tu gato naranja. Travieso, cómodo, imposible de mover. Parte del elenco sin pedir permiso.",
+          "badge": "Honorario"
+        },
+        {
+          "id": "just-dance",
+          "name": "Just Dance",
+          "title": "Compañero de piso",
+          "emoji": "💃",
+          "quote": "\"Un paso en falso y dos risas después.\"",
+          "color": "#8e44ad",
+          "note": "Lo jugábamos juntos. Tú moviéndote como si el mundo fuera escenario — y yo intentando no quedarme atrás.",
+          "badge": "Juego favorito"
+        },
+        {
+          "id": "greeicy",
+          "name": "Greeicy",
+          "title": "Referencia involuntaria",
+          "emoji": "✨",
+          "quote": "\"Bailas como si la música te conociera de antes.\"",
+          "color": "#c9a84c",
+          "note": "No porque copies a nadie — sino porque te mueves con esa gracia, esa luz. Hermosa y libre.",
+          "badge": "Como te veo bailar"
+        },
+        {
+          "id": "sobrinos",
+          "name": "Tus sobrinos",
+          "title": "El coro de Flexin",
+          "emoji": "⭐",
+          "quote": "\"Lit Killah sonando y todos moviéndose al unísono.\"",
+          "color": "#27ae60",
+          "note": "Bailábamos Flexin con ellos. Tú cuidándolos, riendo, siendo tía de la forma más bonita posible.",
+          "badge": "Familia"
+        },
+        {
+          "id": "mama",
+          "name": "Mi mamá",
+          "title": "El abrazo que guardé",
+          "emoji": "🤍",
+          "quote": "\"Cuando volviste a mi casa, ella te abrazó muy fuerte.\"",
+          "color": "#2980b9",
+          "note": "Después de años. Sin palabras largas. Solo ese abrazo que dijo todo lo que el tiempo no pudo borrar.",
+          "badge": "Regreso"
+        },
+        {
+          "id": "skincare",
+          "name": "Las mascarillas",
+          "title": "Una tarde reciente",
+          "emoji": "🧖‍♀️",
+          "quote": "\"Te quedaste tranquila mientras te pasaba el aparatito por la cara.\"",
+          "color": "#9b59b6",
+          "note": "Hace poco, en mi casa. Mascarillas, skincare, calma. A veces los recuerdos nuevos entran en la caja fuerte sin hacer ruido.",
+          "badge": "Ahora"
+        },
+        {
+          "id": "futbol-rubik",
+          "name": "Fútbol y cubos Rubik",
+          "title": "Lo que compartimos ahora",
+          "emoji": "⚽",
+          "quote": "\"Cosas que no estaban en el primer capítulo, pero sí en este.\"",
+          "color": "#16a085",
+          "note": "Me gusta que ahora también hablemos de fútbol y de cubos Rubik. Como si la historia siguiera escribiéndose.",
+          "badge": "Hoy"
+        }
+      ]
+    },
+    {
+      "id": "admiracion",
+      "number": 6,
+      "title": "Cosas que siempre admiré de ti",
+      "subtitle": "Sin exagerar. Sin editar.",
+      "closingLine": "Esta lista es más larga de lo que cabe aquí — y sigue creciendo.",
+      "traits": [
+        {
+          "id": "graduacion",
+          "icon": "🎓",
+          "title": "Tu graduación",
+          "description": "Años de esfuerzo que casi nadie vio por completo. Ese día cruzaste una meta que construiste tú sola. Siempre admiré verte cumplir cosas."
+        },
+        {
+          "id": "familia",
+          "icon": "🏠",
+          "title": "Cómo cuidas a tu familia",
+          "description": "La manera en que hablas de los tuyos, en que estás presente — dice más de ti que cualquier discurso."
+        },
+        {
+          "id": "sobrinos",
+          "icon": "⭐",
+          "title": "Tus sobrinos",
+          "description": "Esa luz que les das. Esa paciencia, esa risa compartida — con Flexin, con Just Dance, con la vida. Ser tía tuya es suerte."
+        },
+        {
+          "id": "bondad",
+          "icon": "🌿",
+          "title": "Tu bondad",
+          "description": "No la de apariencia. La real. La que aparece cuando nadie está mirando y aun así eliges bien."
+        },
+        {
+          "id": "bailar",
+          "icon": "💃",
+          "title": "Cómo bailas",
+          "description": "Con Just Dance, con Flexin, con lo que suene. Te mueves como Greeicy — con gracia, con alegría. Te queda bonito, y no lo digo por la canción."
+        },
+        {
+          "id": "calma",
+          "icon": "🧖‍♀️",
+          "title": "Tu calma",
+          "description": "Hace poco, con las mascarillas puestas, te quedaste tranquila mientras te pasaba el aparatito de skincare por la cara. Admiré esa paz tuya."
+        },
+        {
+          "id": "ahora",
+          "icon": "⚽",
+          "title": "Lo que compartimos ahora",
+          "description": "Fútbol. Cubos Rubik. Cosas nuevas en capítulos que no existían cuando nos cruzábamos en el bus. Me gusta que sigan apareciendo."
+        }
+      ]
+    },
+    {
+      "id": "antes-de-abrir",
+      "number": 7,
+      "title": "Antes de abrir la caja",
+      "subtitle": "Lo que viene no es una galería",
+      "paragraphs": [
+        "Hay recuerdos que no deberían aparecer demasiado pronto.",
+        "Algunas fotos no se toman para publicarse.\nSe toman sin saber que, años después,\nvan a convertirse en pequeñas pruebas\nde que algo fue real.",
+        "Por eso preferí guardarlas juntas.",
+        "No como una galería.\nSino como una caja fuerte."
+      ],
+      "cta": "Continúa para abrirla"
+    },
+    {
+      "id": "caja-fuerte",
+      "number": 8,
+      "title": "La Caja Fuerte",
+      "subtitle": "Guardado durante años",
+      "vaultView": {
+        "title": "La Caja Fuerte de los Recuerdos",
+        "subtitle": "Algunas fotos no se toman para publicarse. Se toman para sobrevivir al tiempo.",
+        "closingNote": "No todos los recuerdos necesitan explicación. Algunos solo necesitan volver a verse una vez más.",
+        "music": "/memories/musica-fondo.mp3",
+        "musicPlayLabel": "Reproducir música",
+        "musicPauseLabel": "Pausar música",
+        "closeLabel": "Cerrar la bóveda",
+        "memories": [
+          {
+            "id": 1,
+            "type": "video",
+            "src": "/memories/1.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 2,
+            "type": "image",
+            "src": "/memories/2.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 3,
+            "type": "video",
+            "src": "/memories/3.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 4,
+            "type": "image",
+            "src": "/memories/4.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 5,
+            "type": "video",
+            "src": "/memories/5.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 6,
+            "type": "video",
+            "src": "/memories/6.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 7,
+            "type": "image",
+            "src": "/memories/7.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 8,
+            "type": "image",
+            "src": "/memories/8.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 9,
+            "type": "image",
+            "src": "/memories/9.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 10,
+            "type": "image",
+            "src": "/memories/10.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 11,
+            "type": "video",
+            "src": "/memories/11.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 12,
+            "type": "video",
+            "src": "/memories/12.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 13,
+            "type": "image",
+            "src": "/memories/13.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 14,
+            "type": "image",
+            "src": "/memories/14.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 15,
+            "type": "image",
+            "src": "/memories/15.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 16,
+            "type": "video",
+            "src": "/memories/16.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 17,
+            "type": "video",
+            "src": "/memories/17.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 18,
+            "type": "video",
+            "src": "/memories/18.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 19,
+            "type": "video",
+            "src": "/memories/19.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 20,
+            "type": "video",
+            "src": "/memories/20.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 21,
+            "type": "video",
+            "src": "/memories/21.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 22,
+            "type": "video",
+            "src": "/memories/22.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 23,
+            "type": "image",
+            "src": "/memories/23.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 24,
+            "type": "video",
+            "src": "/memories/24.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 25,
+            "type": "image",
+            "src": "/memories/25.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 26,
+            "type": "image",
+            "src": "/memories/26.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 27,
+            "type": "image",
+            "src": "/memories/27.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 28,
+            "type": "image",
+            "src": "/memories/28.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 29,
+            "type": "image",
+            "src": "/memories/29.jpg",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 30,
+            "type": "video",
+            "src": "/memories/30.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 31,
+            "type": "video",
+            "src": "/memories/31.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 32,
+            "type": "video",
+            "src": "/memories/32.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          },
+          {
+            "id": 33,
+            "type": "video",
+            "src": "/memories/33.mp4",
+            "caption": "Recuerdo guardado en la caja fuerte."
+          }
+        ],
+        "optionalVideo": null
+      },
+      "contents": [
+        {
+          "id": 1,
+          "emoji": "📏",
+          "label": "La regla",
+          "desc": "Con tu número escrito. El objeto más ordinario. El símbolo más importante."
+        },
+        {
+          "id": 2,
+          "emoji": "🚌",
+          "label": "El bus",
+          "desc": "Miradas, sonrisas, a veces sentados, a veces parados. El primer capítulo con Shere."
+        },
+        {
+          "id": 3,
+          "emoji": "🌙",
+          "label": "El Parque de la Shere",
+          "desc": "El Parque de la Luz para todos. Nuestro rincón para nosotros."
+        },
+        {
+          "id": 4,
+          "emoji": "🔥",
+          "label": "Flexin con tus sobrinos",
+          "desc": "Lit Killah, risas, baile. Un recuerdo que cabe en una canción, no en una lista."
+        },
+        {
+          "id": 5,
+          "emoji": "🎬",
+          "label": "Nuestro multiverso Marvel",
+          "desc": "Spider-Man de Tom Holland para ti. Iron Man para mí."
+        },
+        {
+          "id": 6,
+          "emoji": "🐱",
+          "label": "Loki",
+          "desc": "El gato naranja que se acostaba en mis piernas."
+        },
+        {
+          "id": 7,
+          "emoji": "🤍",
+          "label": "El abrazo",
+          "desc": "Cuando volviste y mi mamá te abrazó muy fuerte."
+        },
+        {
+          "id": 8,
+          "emoji": "🧖‍♀️",
+          "label": "Las mascarillas",
+          "desc": "Skincare, calma, un recuerdo reciente que ya es parte de la caja."
+        },
+        {
+          "id": 9,
+          "emoji": "⚽",
+          "label": "Fútbol y cubos Rubik",
+          "desc": "Lo que compartimos ahora. Capítulos nuevos."
+        }
+      ]
+    },
+    {
+      "id": "final",
+      "number": 9,
+      "title": "Mensaje Final",
+      "signature": "Hecho con cariño y demasiados recuerdos guardados.",
+      "letter": {
+        "buttonLabel": "Leer la carta completa",
+        "title": "Carta para Shere",
+        "content": "# Desde aquella regla\n\n## Una caja fuerte de recuerdos para Shere\n\nTodo empezó en un bus cualquiera,\nen una de esas tardes\nque parecían no guardar nada importante.\n\nTú ibas con tu amiga,\nyo fingía estar demasiado ocupado\nhablando con los míos,\ny entre una parada y otra\naprendimos a encontrarnos con la mirada.\n\nPrimero eran segundos pequeños.\n\nTus ojos cafés se cruzaban con los míos\ny escapaban rápidamente,\ncomo si hubieran sido descubiertos\nhaciendo algo que todavía\nninguno de los dos se atrevía a explicar.\n\nDespués llegaron las sonrisas.\n\nPequeñas, silenciosas,\nde esas que duran apenas un instante,\npero consiguen acompañarte\ndurante todo el camino a casa.\n\nHasta que apareció una regla perdida.\n\nTodavía me parece curioso\nque algo creado para medir distancias\nfuera precisamente lo que terminó\nacortando la nuestra.\n\nTu número escrito sobre ella,\nmi nerviosismo intentando parecer normal\ny un mensaje enviado esa misma tarde.\n\nAsí empezó todo.\n\nSin grandes discursos,\nsin una batalla final de Marvel,\nsin portales abriéndose en el cielo\nni música épica de fondo.\n\nSolo una regla,\nun número\ny dos personas que llevaban varios días\naprendiendo a sonreírse.\n\nLuego llegaron las conversaciones,\ntus visitas a mi aula,\nlas bromas de mis compañeros\ny esa facilidad extraña\ncon la que dejamos de ser desconocidos.\n\nSiempre tuvimos algo curioso.\n\nIncluso cuando intentamos ser novios,\nseguíamos pareciendo dos mejores amigos\nque se querían un poco más\nde lo que sabían explicar.\n\nY quizá por eso,\naunque el tiempo haya cambiado tantas cosas,\nnunca sentí que fueras solamente\nuna parte antigua de mi historia.\n\nEstuviste cuando algunos días\nse sentían demasiado pesados.\n\nNo llegaste con respuestas imposibles,\nni intentaste reparar el mundo\ncomo si llevaras un traje de hierro.\n\nSimplemente te quedaste.\n\nY a veces, Shere,\nquedarse es una de las formas más bonitas\nque existen de cuidar a alguien.\n\nTal vez por eso siempre elegiste\nal héroe que trepaba paredes.\n\nNo por sus poderes,\nsino porque incluso después de caer,\nsiempre encontraba una forma de levantarse,\nhacer una broma\ny seguir cuidando a los demás.\n\nYo elegía al hombre de la armadura,\nal que escondía lo que sentía\ndetrás de tecnología, orgullo\ny respuestas rápidas.\n\nAhora entiendo un poco mejor\npor qué tú eras más de Spider-Man\ny yo más de Iron Man.\n\nTú siempre has tenido el corazón expuesto.\n\nYo tardé varios años\nen aprender a quitarme la armadura.\n\nPorque tú tienes esa forma de ser.\n\nLa forma de escuchar,\nde cuidar,\nde hacer sentir cómoda\na la persona que se encuentre contigo.\n\nEs difícil imaginar a alguien\nconociéndote de verdad\ny encontrando una razón\npara que le caigas mal.\n\nLlegas a los lugares\ny consigues que todo se sienta menos extraño.\n\nComo si llevaras contigo\nuna especie de hogar pequeño\ny supieras acomodarlo\ndondequiera que estuvieras.\n\nDetrás de tus ojos cafés,\nque siguen siendo de los más bonitos\nque he visto,\n\nde tu rostro dulce,\nde tu cabello siempre hermoso\ny de esa forma tan ligera\nde caminar por el mundo,\n\nhay algo todavía más bonito:\n\nla manera en que quieres a las personas.\n\nLa forma en que te entregas a tu familia,\nel cariño inmenso por tus sobrinos,\nla paciencia con la que has estado para ellos\ny esa capacidad de dar amor\nsin llevar una cuenta de cuánto entregas.\n\nLos nombres que ahora llevas en tu piel\nno son solamente tatuajes.\n\nSon la prueba de que algunas personas\nno necesitan una capa\npara convertirse en heroínas.\n\nA veces pienso\nque has pasado tanto tiempo\ncuidando a los demás\nque también mereces un año\nen el que la vida se ocupe\nun poco más de cuidarte a ti.\n\nDespués vino el Parque de la Luz,\naunque para mí siempre será\nel Parque de la Shere.\n\nUn lugar cualquiera en el mapa,\npero no en nuestra historia.\n\nEse día llegamos\ncon demasiadas cosas guardadas dentro.\n\nLloramos, hablamos,\ndejamos que la tarde nos encontrara vulnerables\ny, cuando el mundo finalmente\nbajó un poco el volumen,\nvolvimos a encontrarnos.\n\nFue una conexión difícil de explicar.\n\nDe esas que ni siquiera\nDoctor Strange podría ordenar\ndentro de una sola línea del tiempo.\n\nNo sé si algunas personas\nse encuentran más de una vez\no si simplemente existen historias\nque saben esperar\nhasta que sus protagonistas vuelven a coincidir.\n\nSolo sé que unos días después\nvolvimos a elegirnos.\n\nUn cinco de septiembre.\n\nLuego llegó nuestra primera cita.\n\nUn centro comercial,\nlargas conversaciones,\nun batido de yogurt\ny una fotografía que terminó guardando\nmucho más de lo que parecía.\n\nHubo familias conociéndose,\nhermanas haciendo bromas,\nabuelos guardándote cariño\ny una casa que, poco a poco,\ntambién comenzó a pronunciar tu nombre\ncomo si siempre lo hubiera conocido.\n\nHubo un Año Nuevo\ny un abrazo que nunca esperé.\n\nUn “mijo” dicho con cariño\nque consiguió dejarme inmóvil,\ncomo si por unos segundos\nel tiempo hubiera decidido detenerse.\n\nY mientras nuestras familias\naprendían a querernos,\nnosotros llenábamos los días\nde películas, música\ny momentos que entonces parecían normales.\n\nTú tenías a Spider-Man.\n\nYo tenía a Iron Man.\n\nPero de alguna forma,\nsin importar qué héroe apareciera en pantalla,\nel verdadero poder siempre fue\npoder sentarnos juntos a discutir\nquién habría ganado la pelea.\n\nTambién llegó Lit Killah.\n\nLlegó Flexin sonando en la casa,\ntus sobrinos bailando,\nnosotros siguiéndolos\ny esas tardes que parecían\nun videoclip grabado sin cámaras.\n\nTal vez no teníamos luces,\nescenarios ni coreografías perfectas,\npero nadie necesitaba más.\n\nLa canción empezaba\ny por unos minutos\nla casa entera tenía su propio ritmo.\n\nLuego estaba Just Dance.\n\nTú moviéndote como si conocieras\nel siguiente paso antes de que apareciera\ny yo intentando convencer al juego\nde que mis movimientos también contaban.\n\nEn ese tiempo no sabía bailar.\n\nO, siendo completamente honesto,\ncreía que mover los brazos con entusiasmo\nera suficiente para obtener una buena puntuación.\n\nAhora he mejorado.\n\nNo digo que pueda competir contigo,\npero quizá ya no sería necesario\nque el juego tuviera compasión de mí.\n\nAunque contigo siempre fue diferente.\n\nTú no solamente bailas.\n\nTienes esa forma de dejar\nque la música pase por todo tu cuerpo,\ncomo si el ritmo hubiera estado esperándote\ndesde antes de empezar la canción.\n\nA veces, cuando te veo bailar,\nme recuerdas a Greeicy.\n\nNo solo por lo hermosa que eres\nni por esa forma ligera y segura\nde moverte.\n\nEs porque las dos parecen entender\nque bailar no consiste únicamente\nen seguir una canción.\n\nConsiste en hacer que la canción\nparezca haber sido escrita\npara ese movimiento.\n\nTú tienes eso.\n\nUna presencia que no necesita esforzarse\npara llamar la atención.\n\nUna mezcla extraña\nentre ternura y seguridad.\n\nUna carita angelical\nque podría convencer a cualquiera\nde que nunca ha roto un plato,\n\ny una forma de bailar\nque rápidamente vuelve sospechosa\nesa teoría.\n\nTambién apareció Loki.\n\nNo el dios de las mentiras\nque tantas veces quiso conquistar el mundo,\n\nsino un gato naranja,\ngordito\ny completamente convencido\nde que mis piernas formaban parte\nde sus dominios personales.\n\nCada vez que iba a tu casa\nse acomodaba sobre mí\ncon la tranquilidad de quien sabe\nque ha ganado una batalla.\n\nQuizá ese Loki sí tenía\nun glorioso propósito:\n\ndejarme atrapado en el mismo lugar\npara que pudiera quedarme un poco más.\n\nTambién hubo fotos torcidas,\nhistorias de Instagram,\nfiltros que hoy parecen de otra vida\ny canciones pegadas en la esquina\ncomo pequeñas etiquetas del tiempo.\n\nSay You Won’t Let Go,\nTe Encontré,\nComo Si No Importara,\nPanamá,\nLoco,\nProblemas,\nTe Quiero.\n\nCanciones que no solamente sonaban.\n\nGuardaban una época.\n\nHay canciones que envejecen.\n\nY luego están las otras.\n\nLas que se quedan quietas durante años,\nesperando.\n\nEsperando una fotografía,\nun recuerdo,\nuna historia olvidada,\no una tarde cualquiera\npara volver a sonar.\n\nY de pronto aparecen otra vez.\n\nY uno ya no escucha solamente la música.\n\nEscucha a las personas que estaban allí.\n\nEscucha las risas.\n\nEscucha los momentos.\n\nEscucha una versión más joven de sí mismo.\n\nCreo que por eso algunas canciones\nsiguen siendo peligrosas.\n\nPorque conocen demasiado bien\nel camino de regreso.\n\nHubo días de poses tontas,\nmanos formando promesas,\ncorazones dibujados con filtros,\namigos molestando\ny frases que solo tenían sentido\nen el universo pequeño\nque habitábamos en ese entonces.\n\nHubo una época\nen la que me dejaba maquillar\nsin protestar demasiado.\n\nBueno.\n\nTal vez sí protestaba.\n\nPero igual terminaba quieto,\ncon los ojos cerrados,\nconfiando en tus manos\ny en esa risa tuya\nque hacía que cualquier plan absurdo\nvaliera la pena.\n\nHubo disfraces.\n\nTú en una versión oscura,\nhermosa y misteriosa,\ncomo salida de una película\nque todavía no se había estrenado.\n\nYo con máscara de Spider-Man,\nprobablemente creyéndome\nmás héroe de lo que realmente era.\n\nAhora lo pienso\ny me causa ternura.\n\nPorque quizá nunca hizo falta\ntener poderes.\n\nA veces bastaba con estar juntos,\nreírnos de cualquier cosa\ny guardar esas fotos\nsin saber que años después\niban a parecer pequeñas reliquias.\n\nTambién estuvo tu graduación.\n\nY hay algo\nque quizá nunca te dije lo suficiente.\n\nSiempre me gustó verte crecer.\n\nNo solamente porque fueras importante para mí.\n\nSino porque admiraba la persona\nen la que te estabas convirtiendo.\n\nRecuerdo ver esas fotografías\ny sentir una felicidad extraña.\n\nComo si un logro tuyo\ntambién hubiera iluminado\nun pedacito de mi día.\n\nPorque detrás de esa sonrisa\nhabía noches de esfuerzo,\nresponsabilidades,\npreocupaciones\ny muchas cosas que casi nadie veía.\n\nY aun así lo lograste.\n\nCreo que siempre he sido fan\nde las personas buenas.\n\nY tú, además de buena,\nsiempre has sido valiente.\n\nLuego llegaron los años.\n\nY los años, como Thanos,\nno suelen pedir permiso\nantes de cambiarlo todo.\n\nCambiaron nuestras rutinas,\nnuestros planes,\nlas personas que nos acompañaron\ny las versiones que fuimos construyendo\nde nosotros mismos.\n\nNos vimos pocas veces.\n\nA veces pasó casi un año,\notras veces mucho más.\n\nPero cada reencuentro tenía algo extraño.\n\nEra como volver a una película\nque habías dejado pausada\ny descubrir que todavía recordabas\nexactamente lo que estaba ocurriendo.\n\nLas conversaciones retomaban su lugar.\n\nLas bromas regresaban.\n\nY esa facilidad de mirarnos\nseguía allí,\ncomo si algunos vínculos\nfueran inmunes al chasquido del tiempo.\n\nCada uno tuvo su propia historia.\n\nAprendimos, nos equivocamos,\nquisimos a otras personas\ny recorrimos caminos separados.\n\nTal vez eso también era necesario.\n\nPeter Parker tuvo que aprender\nque querer a alguien\nno siempre significa retenerlo.\n\nTony Stark tuvo que descubrir\nque madurar no consistía\nen tener siempre la razón,\nsino en hacerse responsable\nde las decisiones tomadas.\n\nYo necesité tiempo\npara comprender algunas cosas.\n\nPara reconocer que hubo momentos\nen los que mis inseguridades\nhablaron más fuerte que el cariño.\n\nPara entender que pedir otra oportunidad\nno sirve de mucho\nsi uno todavía no se ha convertido\nen alguien capaz de cuidarla.\n\nNo escribo esto para cambiar el pasado.\n\nHay cosas que no necesitan borrarse.\n\nNecesitan enseñarnos.\n\nHace poco regresaste a mi casa.\n\nDespués de tantos años,\nvolviste a cruzar esa puerta\ny mi familia pareció reconocerte\nantes de que cualquiera pudiera decir algo.\n\nEl abrazo de mi mamá contigo\nfue de esos momentos\nque deberían poder guardarse\nen una caja fuerte.\n\nNo como una fotografía,\nsino completos:\n\ncon el tiempo que duraron,\ncon la emoción,\ncon las ganas de llorar\nque uno intenta disimular.\n\nLa casa volvió a llenarse de tu voz,\nde conversaciones con mi hermana,\nde risas antiguas\ny de una paz que yo no sabía\nque necesitaba tanto.\n\nLuego aparecieron las mascarillas,\nel pequeño aparato que vibraba\ny tú intentando quedarte quieta\nmientras yo lo pasaba por tu rostro.\n\nPor un momento\nte quedaste dormida.\n\nY allí estabas,\ncon esa expresión tranquila,\nla misma carita dulce\ny los ojos cerrados\ndespués de haber conseguido\nponer nerviosos a los míos\ndurante toda la noche.\n\nFue un momento sencillo.\n\nNada extraordinario\npara cualquiera que lo hubiera visto.\n\nPero existen escenas pequeñas\nque terminan teniendo\nmás significado que una película completa.\n\nDesde ese día\nuna canción comenzó a aparecer seguido.\n\nEsa que habla de alguien\nque tiene algo capaz\nde cambiarte el ánimo.\n\nY cada vez que la escucho\nentiendo un poco mejor la frase.\n\nPorque llegaste en semanas grises\nsin saber que lo eran tanto.\n\nNo tuviste que decir un discurso,\nhacer una promesa\nni descubrir un poder escondido.\n\nSolo volviste a aparecer.\n\nY de alguna manera,\nsin proponértelo,\ncambiaste el mood.\n\nDespués de verte\nvolví a estudiar,\na concentrarme,\na recuperar cosas que sentía perdidas.\n\nNo porque debiera convertirme\nen alguien distinto para impresionarte,\n\nsino porque recordar tu mirada\nme hizo acordarme también\nde la persona que todavía podía ser.\n\nNo quiero colocar sobre ti\nla responsabilidad de haberme salvado.\n\nEso no sería justo.\n\nPero sí puedo agradecerte\npor haber sido una pequeña luz\nen el momento exacto.\n\nQuizá por eso la canción\nTe queda bonito\nse quedó rondando mis días.\n\nPorque hay personas\na las que les queda bonita una sonrisa,\nuna canción,\nuna camiseta de fútbol\no la emoción de mostrar una aplicación\nque avisa todos los partidos.\n\nPero a ti también te queda bonito\nser tú.\n\nTe queda bonito emocionarte,\nbailar,\nhablar de música,\nresolver un cubo Rubik\ny cuidar con tanta ternura\na las personas que amas.\n\nTe queda bonito reírte.\n\nTe queda bonito ese cabello\nque siempre consigue verse bien\naunque probablemente tú encuentres\nalgún detalle que discutirle.\n\nTe quedan bonitos tus ojos cafés,\naunque decirlo de frente\ntodavía pueda ponerme nervioso.\n\nY, sobre todo,\nte queda bonita\nesa forma tuya de ser buena\nsin tener que anunciarlo.\n\nAhora compartimos otras cosas.\n\nEl fútbol,\nlos cubos,\nlas canciones que llegan de Argentina\ny una lista de artistas\nque parece no dejar de crecer.\n\nDuki,\nEmilia,\nMaría Becerra,\nRusherking,\nTiago,\nLit Killah.\n\nCanciones que fueron cambiando de sonido\nmientras nosotros también cambiábamos.\n\nAlgunas sirvieron para bailar.\n\nOtras para recordar.\n\nY algunas tienen esa costumbre peligrosa\nde decir en tres minutos\nlo que uno lleva años\nintentando ordenar en la cabeza.\n\nQuizá por eso quise hacer este poema.\n\nPara no mandarte solamente una canción\nesperando que entendieras el mensaje.\n\nPara reunir las películas,\nlos bailes,\nlas fechas,\nlas risas,\nlas fotos torcidas,\nlos disfraces,\nlos filtros viejos\ny los pequeños objetos\nque terminaron formando nuestra historia.\n\nCon los años olvidé muchas cosas.\n\nFechas.\n\nConversaciones.\n\nContraseñas.\n\nNombres.\n\nMomentos que en su momento\nparecían importantes.\n\nPero nunca olvidé\ncómo me sentía cuando estaba contigo.\n\nNo hablo de una emoción específica.\n\nNi de una etapa.\n\nNi siquiera de una versión antigua\nde nosotros.\n\nHablo de esa tranquilidad.\n\nDe esa sensación\nde estar exactamente\ndonde uno quiere estar.\n\nY creo que esa es una de las razones\npor las que tantos recuerdos\nsiguen aquí.\n\nPorque cuando algo\nte hace sentir en casa,\nel tiempo puede pasar,\nlas personas pueden cambiar\ny la vida puede tomar caminos distintos.\n\nPero una parte de ti\nsiempre recuerda cómo llegar.\n\nHoy no quiero escribirte\nuna declaración enorme.\n\nTampoco una promesa\nni una pregunta difícil.\n\nNo quiero que este regalo\nse convierta en una presión\no en una respuesta\nque tengas que encontrar.\n\nSolo quería abrir\nla caja fuerte de los recuerdos.\n\nDejar salir algunas fotografías,\nalgunos videos,\nun gato naranja,\nuna regla,\nun yogurt,\nuna canción de Lit Killah,\nun disfraz de Spider-Man,\nun filtro viejo,\nuna tarde con amigos\ny varias versiones antiguas\nde nosotros mismos.\n\nPara que puedas mirarlas\ny sonreír si alguna todavía\nte causa ternura.\n\nPara recordarte que has sido\nuna persona muy especial\nen distintas etapas de mi vida.\n\nY para celebrar a la persona\nen la que te has convertido.\n\nFeliz cumpleaños, Shere.\n\nEspero que este nuevo año\nte dé más tiempo para ti.\n\nQue puedas bailar más,\nviajar más,\nreírte hasta que te duela el rostro\ny cumplir todas esas cosas\nque alguna vez dejaste para después.\n\nEspero que recibas\nuna parte de todo el cariño\nque siempre entregas.\n\nQue encuentres canciones\nque te hagan bailar como Greeicy,\npartidos que te emocionen,\ncubos imposibles que puedas resolver\ny películas capaces de sorprenderte\naunque ya conozcas todos los héroes.\n\nY también espero,\nsin prisa\ny sin hacer demasiado ruido,\n\nque todavía nos queden\nalgunas canciones por escuchar,\npelículas por discutir,\npartidos por comentar\ny pasos de Just Dance\nen los que esta vez\ntal vez consiga seguirte.\n\nNo sé en qué universo\nterminaremos nuestras historias.\n\nDoctor Strange probablemente diría\nque existen demasiadas posibilidades.\n\nYo solo sé que,\nentre todas las rutas que pudo tomar aquel bus,\nentre todas las reglas\nque pude no haber encontrado\ny todos los números\nque pudieron no haber sido escritos,\n\nme alegra que nuestra historia\nhaya ocurrido en esta línea del tiempo.\n\nPorque algunas personas\nno necesitan aparecer todos los días\npara conservar un lugar importante.\n\nAlgunas historias\nno necesitan saber todavía\nhacia dónde van.\n\nY algunos reencuentros\nno necesitan una explicación.\n\nA veces basta con saber\nque fue bonito encontrarse.\n\nY que, después de tantos años,\ntodavía lo es.\n"
+      },
+      "lines": [
+        "Gracias por haber estado en tantos capítulos importantes de mi vida — desde ese bus hasta el Parque de la Shere, desde Loki en mis piernas hasta las mascarillas en mi casa.",
+        "Gracias por seguir siendo alguien a quien me alegra encontrar, después de todos estos años. Te queda bonito todo lo que haces — y lo digo en serio, no solo en una canción.",
+        "Feliz cumpleaños, Shere."
+      ]
+    }
+  ]
+}

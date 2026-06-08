@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --night: #0a0a1a;
+  --deep: #0f0f2e;
+  --purple-dark: #1a0a2e;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --warm-white: #f5f0e8;
+  --warm-gray: #c8c0b0;
+  --text-dim: #7a7060;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--night);
+  color: var(--warm-white);
+  font-family: 'Lora', Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Film grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  opacity: 0.06;
+  animation: filmGrain 0.8s steps(2) infinite;
+}
+
+@keyframes filmGrain {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-1%, -1%) rotate(0.1deg); }
+  20% { transform: translate(1%, 0%) rotate(-0.1deg); }
+  30% { transform: translate(0%, 1%) rotate(0.05deg); }
+  40% { transform: translate(1%, 1%) rotate(-0.05deg); }
+  50% { transform: translate(-1%, 0%) rotate(0deg); }
+  60% { transform: translate(0%, -1%) rotate(0.1deg); }
+  70% { transform: translate(1%, -1%) rotate(-0.1deg); }
+  80% { transform: translate(-1%, 1%) rotate(0.05deg); }
+  90% { transform: translate(0%, 0%) rotate(-0.05deg); }
+  100% { transform: translate(-1%, -1%) rotate(0deg); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--night);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* Text selection */
+::selection {
+  background: var(--gold);
+  color: var(--night);
+}
+
+/* Chapter sections */
+.chapter-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Polaroid effect */
+.polaroid {
+  background: #f0ead6;
+  padding: 12px 12px 40px 12px;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* Noise texture background */
+.noise-bg {
+  position: relative;
+}
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+/* Vignette overlay */
+.vignette {
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(10,10,26,0.8) 100%);
+}
+
+/* Bus window animation */
+@keyframes busLights {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-200px); }
+}
+
+.bus-light {
+  animation: busLights linear infinite;
+}
+
+/* Typing cursor */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: var(--gold);
+}
+
+/* Star twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.star {
+  animation: twinkle ease-in-out infinite;
+}
