@@ -28,7 +28,7 @@
       "title": "La Regla",
       "subtitle": "12 pulgadas de historia",
       "quote": "Hay objetos que miden distancias. Esta fue la primera que decidió acortarlas.",
-      "body": "Una amiga tuya pidió prestada una regla. Cuando la devolvieron, tenía escrito tu número — el de Shere. Doce pulgadas de plástico común. El símbolo de todo lo demás.",
+      "body": "Una amiga tuya pidió prestada una regla. Cuando la devolvieron, tenía escrito tu número. Doce pulgadas de plástico común. El símbolo de todo lo demás.",
       "rulerText": "Shere ✦ tu número"
     },
     {
@@ -54,7 +54,7 @@
           "name": "Spider-Man",
           "emoji": "🕷️",
           "color": "#c0392b",
-          "tagline": "Con gran poder viene gran responsabilidad.",
+          "tagline": "Un gran poder conlleva una gran responsabilidad.",
           "memory": "Tu héroe. El de Tom Holland. Te recuerdo cuidando de los tuyos, levantándote cuando caes, siendo fuerte sin hacer ruido. Así eres tú, Shere."
         },
         {
@@ -116,7 +116,7 @@
           "quote": "\"Un paso en falso y dos risas después.\"",
           "color": "#8e44ad",
           "note": "Lo jugábamos juntos. Tú moviéndote como si el mundo fuera escenario — y yo intentando no quedarme atrás.",
-          "badge": "Juego favorito"
+          "badge": "Pasos y risas"
         },
         {
           "id": "greeicy",
@@ -193,7 +193,7 @@
           "id": "sobrinos",
           "icon": "⭐",
           "title": "Tus sobrinos",
-          "description": "Esa luz que les das. Esa paciencia, esa risa compartida — con Flexin, con Just Dance, con la vida. Ser tía tuya es suerte."
+          "description": "Esa luz que les das. Esa paciencia, esa risa compartida — en las tardes con ellos, en los planes simples, en la vida. Ser tía tuya es suerte."
         },
         {
           "id": "bondad",
@@ -239,6 +239,17 @@
       "number": 8,
       "title": "La Caja Fuerte",
       "subtitle": "Guardado durante años",
+      "vaultPassword": {
+        "day": 5,
+        "month": 9,
+        "year": 2020,
+        "prompt": "Para abrirla necesitas una fecha — el día que volvimos a empezar.",
+        "placeholder": "DD / MM / AAAA",
+        "submitLabel": "Desbloquear",
+        "cancelLabel": "Cancelar",
+        "errorMessage": "Esa no es la fecha correcta. Inténtalo otra vez.",
+        "unlockingLabel": "FECHA CORRECTA"
+      },
       "vaultView": {
         "title": "La Caja Fuerte de los Recuerdos",
         "subtitle": "Algunas fotos no se toman para publicarse. Se toman para sobrevivir al tiempo.",

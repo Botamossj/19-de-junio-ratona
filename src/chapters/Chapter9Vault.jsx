@@ -4,15 +4,37 @@ import ChapterHeader from '../components/ChapterHeader'
 import MemoryVaultView from '../components/MemoryVaultView'
 import content from '../data/content.json'
 
+function isValidVaultPassword(input, { day, month, year }) {
+  const trimmed = input.trim()
+  const slashMatch = trimmed.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/)
+  if (slashMatch) {
+    return (
+      parseInt(slashMatch[1], 10) === day &&
+      parseInt(slashMatch[2], 10) === month &&
+      parseInt(slashMatch[3], 10) === year
+    )
+  }
+  const digits = trimmed.replace(/\D/g, '')
+  const variants = [
+    String(day).padStart(2, '0') + String(month).padStart(2, '0') + String(year),
+    String(day) + String(month) + String(year),
+    String(day).padStart(2, '0') + String(month) + String(year),
+  ]
+  return variants.includes(digits)
+}
+
 export default function Chapter9Vault() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
   const chapter = content.chapters.find(c => c.id === 'caja-fuerte')
+  const vaultPassword = chapter.vaultPassword
   const [showVaultView, setShowVaultView] = useState(false)
+  const [showPasswordModal, setShowPasswordModal] = useState(false)
+  const [passwordInput, setPasswordInput] = useState('')
+  const [passwordError, setPasswordError] = useState(false)
   const [phase, setPhase] = useState('idle') // idle | clicking | spinning | opening | open
 
-  const handleClick = () => {
-    if (showVaultView || phase !== 'idle') return
+  const startUnlockAnimation = () => {
     setPhase('clicking')
     setTimeout(() => setPhase('spinning'), 300)
     setTimeout(() => setPhase('opening'), 1800)
@@ -20,6 +42,30 @@ export default function Chapter9Vault() {
       setPhase('open')
       setTimeout(() => setShowVaultView(true), 500)
     }, 2800)
+  }
+
+  const handleClick = () => {
+    if (showVaultView || phase !== 'idle') return
+    setPasswordInput('')
+    setPasswordError(false)
+    setShowPasswordModal(true)
+  }
+
+  const handleSubmitPassword = (e) => {
+    e.preventDefault()
+    if (isValidVaultPassword(passwordInput, vaultPassword)) {
+      setShowPasswordModal(false)
+      setPasswordError(false)
+      startUnlockAnimation()
+    } else {
+      setPasswordError(true)
+    }
+  }
+
+  const handleClosePasswordModal = () => {
+    setShowPasswordModal(false)
+    setPasswordInput('')
+    setPasswordError(false)
   }
 
   const handleCloseVault = () => {
@@ -250,12 +296,115 @@ export default function Chapter9Vault() {
                 className="mt-10 text-center font-body text-sm italic max-w-md"
                 style={{ color: 'var(--warm-gray)', opacity: 0.7 }}
               >
-                Lo guardado durante años está dentro. Pulsa la caja para entrar.
+                Lo guardado durante años está dentro. Pulsa la caja — y recuerda la fecha.
               </motion.p>
             )}
           </div>
         </div>
       </section>
+
+      <AnimatePresence>
+        {showPasswordModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-6"
+            style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(10px)' }}
+            onClick={handleClosePasswordModal}
+          >
+            <motion.form
+              initial={{ scale: 0.85, opacity: 0, y: 20 }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                x: passwordError ? [0, -8, 8, -6, 6, 0] : 0,
+              }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+              onClick={e => e.stopPropagation()}
+              onSubmit={handleSubmitPassword}
+              className="relative max-w-sm w-full rounded overflow-hidden"
+              style={{
+                background: 'linear-gradient(145deg, #1a1a28, #0f0f1e)',
+                border: `1px solid ${passwordError ? 'rgba(220,80,80,0.5)' : 'rgba(201,168,76,0.35)'}`,
+              }}
+            >
+              <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
+
+              <div className="p-8">
+                <div className="text-center mb-6">
+                  <span style={{ fontSize: '2.5rem' }}>🔐</span>
+                  <p className="font-body text-sm leading-relaxed mt-4" style={{ color: 'var(--warm-gray)' }}>
+                    {vaultPassword.prompt}
+                  </p>
+                </div>
+
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  autoComplete="off"
+                  autoFocus
+                  value={passwordInput}
+                  onChange={e => {
+                    setPasswordInput(e.target.value)
+                    if (passwordError) setPasswordError(false)
+                  }}
+                  placeholder={vaultPassword.placeholder}
+                  className="w-full px-4 py-3 text-center font-mono text-lg tracking-widest rounded"
+                  style={{
+                    background: 'rgba(0,0,0,0.4)',
+                    border: `1px solid ${passwordError ? 'rgba(220,80,80,0.6)' : 'rgba(201,168,76,0.25)'}`,
+                    color: 'var(--warm-white)',
+                    outline: 'none',
+                  }}
+                />
+
+                {passwordError && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-3 text-center font-mono text-xs"
+                    style={{ color: '#e08080' }}
+                  >
+                    {vaultPassword.errorMessage}
+                  </motion.p>
+                )}
+
+                <button
+                  type="submit"
+                  className="mt-6 w-full py-3 font-mono text-xs tracking-widest"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(201,168,76,0.25), rgba(138,96,48,0.15))',
+                    border: '1px solid rgba(201,168,76,0.4)',
+                    color: 'var(--gold)',
+                    cursor: 'pointer',
+                    letterSpacing: '0.2em',
+                  }}
+                >
+                  {vaultPassword.submitLabel}
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleClosePasswordModal}
+                  className="mt-3 w-full py-2 font-mono text-xs tracking-widest"
+                  style={{
+                    border: 'none',
+                    color: 'var(--text-dim)',
+                    background: 'transparent',
+                    cursor: 'pointer',
+                    letterSpacing: '0.15em',
+                  }}
+                >
+                  {vaultPassword.cancelLabel}
+                </button>
+              </div>
+            </motion.form>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <MemoryVaultView isOpen={showVaultView} onClose={handleCloseVault} />
     </>
