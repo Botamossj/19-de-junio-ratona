@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import content from '../data/content.json'
 
 const STARS = Array.from({ length: 80 }, (_, i) => ({
   id: i,
@@ -84,7 +85,7 @@ export default function Cover({ onOpen }) {
                 backgroundClip: 'text',
               }}
             >
-              Desde aquella regla
+              {content.meta.title}
             </motion.h1>
 
             {/* Decorative line */}

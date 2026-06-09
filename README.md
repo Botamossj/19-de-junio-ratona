@@ -1,4 +1,4 @@
-# Desde aquella regla 🔐
+# 19 de Junio - Ratona 🔐
 **Una caja fuerte de recuerdos para Shere**
 
 Experiencia interactiva de cumpleaños — 10 capítulos, estilo cápsula del tiempo.
