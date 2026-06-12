@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import content from '../data/content.json'
+import useUnlockCountdown from '../hooks/useUnlockCountdown'
 
 const STARS = Array.from({ length: 80 }, (_, i) => ({
   id: i,
@@ -11,7 +12,41 @@ const STARS = Array.from({ length: 80 }, (_, i) => ({
   dur: Math.random() * 4 + 2,
 }))
 
+const COUNTDOWN_UNITS = [
+  { key: 'days', label: 'días' },
+  { key: 'hours', label: 'horas' },
+  { key: 'minutes', label: 'min' },
+  { key: 'seconds', label: 'seg' },
+]
+
+function CountdownBox({ value, label }) {
+  return (
+    <div
+      className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-5 min-w-[4.5rem] md:min-w-[5.5rem]"
+      style={{
+        border: '1px solid rgba(201,168,76,0.35)',
+        background: 'rgba(0,0,0,0.35)',
+      }}
+    >
+      <span
+        className="font-mono text-2xl md:text-3xl tabular-nums"
+        style={{ color: 'var(--gold-light)' }}
+      >
+        {String(value).padStart(2, '0')}
+      </span>
+      <span
+        className="font-mono text-[0.6rem] md:text-xs mt-1 uppercase tracking-widest"
+        style={{ color: 'var(--text-dim)' }}
+      >
+        {label}
+      </span>
+    </div>
+  )
+}
+
 export default function Cover({ onOpen }) {
+  const unlock = content.meta.unlock
+  const { isUnlocked, remaining } = useUnlockCountdown()
   const [ready, setReady] = useState(false)
   const [hovered, setHovered] = useState(false)
 
@@ -113,39 +148,81 @@ export default function Cover({ onOpen }) {
               <span style={{ color: 'var(--gold-light)', fontStyle: 'italic' }}>Shere</span>
             </motion.p>
 
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.2, duration: 0.8 }}
-            >
-              <motion.button
-                onClick={onOpen}
-                onHoverStart={() => setHovered(true)}
-                onHoverEnd={() => setHovered(false)}
-                whileTap={{ scale: 0.97 }}
-                className="relative overflow-hidden font-mono tracking-widest uppercase text-sm px-10 py-4 cursor-pointer"
-                style={{
-                  border: `1px solid var(--gold)`,
-                  color: hovered ? 'var(--night)' : 'var(--gold)',
-                  background: hovered ? 'var(--gold)' : 'transparent',
-                  transition: 'all 0.4s ease',
-                  letterSpacing: '0.3em',
-                }}
-              >
-                {/* Shimmer effect */}
-                <motion.span
-                  className="absolute inset-0 pointer-events-none"
-                  initial={{ x: '-100%' }}
-                  animate={hovered ? { x: '100%' } : { x: '-100%' }}
-                  transition={{ duration: 0.5 }}
-                  style={{
-                    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
-                  }}
-                />
-                Abrir
-              </motion.button>
-            </motion.div>
+            {/* Countdown or CTA */}
+            <AnimatePresence mode="wait">
+              {!isUnlocked ? (
+                <motion.div
+                  key="countdown"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ delay: 2.2, duration: 0.8 }}
+                >
+                  <p
+                    className="font-mono text-xs tracking-[0.3em] uppercase mb-4"
+                    style={{ color: 'var(--gold)', opacity: 0.8 }}
+                  >
+                    {unlock.countdownLabel}
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+                    {COUNTDOWN_UNITS.map(({ key, label }) => (
+                      <CountdownBox key={key} value={remaining[key]} label={label} />
+                    ))}
+                  </div>
+                  <p
+                    className="mt-6 font-body text-sm max-w-sm mx-auto"
+                    style={{ color: 'var(--warm-gray)', opacity: 0.85 }}
+                  >
+                    {unlock.lockedHint}
+                  </p>
+                  <p
+                    className="mt-2 font-mono text-[0.65rem] uppercase tracking-widest"
+                    style={{ color: 'var(--text-dim)' }}
+                  >
+                    {unlock.timezoneLabel}
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="open"
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
+                  <p
+                    className="font-body text-sm mb-6 italic"
+                    style={{ color: 'var(--gold-light)' }}
+                  >
+                    {unlock.unlockedHint}
+                  </p>
+                  <motion.button
+                    onClick={onOpen}
+                    onHoverStart={() => setHovered(true)}
+                    onHoverEnd={() => setHovered(false)}
+                    whileTap={{ scale: 0.97 }}
+                    className="relative overflow-hidden font-mono tracking-widest uppercase text-sm px-10 py-4 cursor-pointer"
+                    style={{
+                      border: `1px solid var(--gold)`,
+                      color: hovered ? 'var(--night)' : 'var(--gold)',
+                      background: hovered ? 'var(--gold)' : 'transparent',
+                      transition: 'all 0.4s ease',
+                      letterSpacing: '0.3em',
+                    }}
+                  >
+                    <motion.span
+                      className="absolute inset-0 pointer-events-none"
+                      initial={{ x: '-100%' }}
+                      animate={hovered ? { x: '100%' } : { x: '-100%' }}
+                      transition={{ duration: 0.5 }}
+                      style={{
+                        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
+                      }}
+                    />
+                    Abrir
+                  </motion.button>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Bottom hint */}
             <motion.p
@@ -155,7 +232,7 @@ export default function Cover({ onOpen }) {
               className="mt-16 font-mono text-xs"
               style={{ color: 'var(--text-dim)', letterSpacing: '0.2em' }}
             >
-              ↓ desplázate para explorar
+              {isUnlocked ? '↓ desplázate para explorar' : unlock.waitingHint}
             </motion.p>
           </motion.div>
         )}
