@@ -138,17 +138,20 @@ function AnimatedRulerText({ visible, text }) {
       initial={{ opacity: 0 }}
       animate={visible ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="absolute top-4 left-1/2 -translate-x-1/2"
+      className="absolute top-1 left-1/2"
+      style={{ transform: 'translateX(-50%) rotate(-1.5deg)' }}
     >
       <motion.span
         initial={{ pathLength: 0 }}
         style={{
-          fontFamily: 'Courier Prime, monospace',
-          fontSize: '13px',
-          color: 'rgba(30,30,30,0.85)',
-          fontStyle: 'italic',
-          letterSpacing: '0.15em',
+          fontFamily: "'Caveat', cursive",
+          fontSize: 'clamp(1.35rem, 3.2vw, 1.75rem)',
+          fontWeight: 600,
+          color: '#1e40af',
+          letterSpacing: '0.04em',
           whiteSpace: 'nowrap',
+          textShadow: '0 0 0.5px rgba(30,64,175,0.95), 0.4px 0.8px 0 rgba(30,64,175,0.2)',
+          filter: 'saturate(1.15)',
         }}
       >
         {visible && <TypedText text={text} delay={200} />}

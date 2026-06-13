@@ -1,6 +1,7 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 import ChapterHeader from '../components/ChapterHeader'
+import GalaxyBackground from '../components/GalaxyBackground'
 import content from '../data/content.json'
 
 const HERO_BG = {
@@ -35,12 +36,13 @@ export default function Chapter4Marvel() {
         paddingBottom: '80px',
       }}
     >
-      {/* Multiverse portal effect */}
+      {/* Multiverse galaxy background */}
+      <GalaxyBackground active={inView} />
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-5"
+        <div
+          className="absolute inset-0"
           style={{
-            background: 'conic-gradient(from 0deg, #c9a84c, #8b00ff, #0040ff, #00c8ff, #c9a84c)',
-            filter: 'blur(60px)',
+            background: 'linear-gradient(180deg, rgba(8,5,26,0.55) 0%, rgba(10,8,36,0.35) 50%, rgba(6,5,15,0.65) 100%)',
           }}
         />
         {/* Comic dot pattern */}
@@ -60,14 +62,40 @@ export default function Chapter4Marvel() {
             initial={{ opacity: 0, y: 10 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-body text-center text-base md:text-lg mb-10 max-w-2xl mx-auto"
+            className="font-body text-center text-base md:text-lg mb-8 max-w-2xl mx-auto"
             style={{ color: 'var(--warm-gray)', fontStyle: 'italic' }}
           >
             {intro}
           </motion.p>
         )}
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="mb-8 flex justify-center"
+        >
+          <motion.div
+            animate={{ opacity: [0.85, 1, 0.85] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="inline-flex items-center gap-3 px-5 py-3 rounded-full text-center"
+            style={{
+              background: 'rgba(201,168,76,0.12)',
+              border: '1px solid rgba(201,168,76,0.45)',
+              boxShadow: '0 0 24px rgba(201,168,76,0.12)',
+            }}
+          >
+            <span style={{ fontSize: '1.1rem' }} aria-hidden="true">👆</span>
+            <p
+              className="font-mono text-xs md:text-sm tracking-[0.18em] uppercase"
+              style={{ color: 'var(--gold-light)' }}
+            >
+              Toca cada personaje para abrir su tarjeta
+            </p>
+          </motion.div>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {heroes.map((hero, i) => (
             <motion.button
               key={hero.id}
@@ -109,16 +137,6 @@ export default function Chapter4Marvel() {
             </motion.button>
           ))}
         </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 1, duration: 1 }}
-          className="font-mono text-xs text-center tracking-widest"
-          style={{ color: 'var(--text-dim)' }}
-        >
-          ↑ toca cada personaje para abrir su tarjeta
-        </motion.p>
       </div>
 
       {/* Hero modal */}

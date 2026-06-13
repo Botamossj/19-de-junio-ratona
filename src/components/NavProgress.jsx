@@ -9,7 +9,6 @@ const CHAPTERS = [
   'Personajes',
   'Admiración',
   'Antes de abrir',
-  'Caja Fuerte',
   'Final',
 ]
 

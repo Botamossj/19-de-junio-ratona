@@ -39,7 +39,7 @@
       "subtitle": "12 pulgadas de historia",
       "quote": "Hay objetos que miden distancias. Esta fue la primera que decidió acortarlas.",
       "body": "Una amiga tuya pidió prestada una regla. Cuando la devolvieron, tenía escrito tu número. Doce pulgadas de plástico común. El símbolo de todo lo demás.",
-      "rulerText": "Shere ✦ tu número"
+      "rulerText": "0998825772"
     },
     {
       "id": "el-parque",
@@ -203,7 +203,7 @@
           "id": "sobrinos",
           "icon": "⭐",
           "title": "Tus sobrinos",
-          "description": "Esa luz que les das. Esa paciencia, esa risa compartida — en las tardes con ellos, en los planes simples, en la vida. Ser tía tuya es suerte."
+          "description": "Esa luz que les das. Esa paciencia, esa risa compartida — en las tardes con ellos, en los planes simples, en la vida. Ser sobrino tuyo es suerte."
         },
         {
           "id": "bondad",
@@ -241,8 +241,7 @@
         "Algunas fotos no se toman para publicarse.\nSe toman sin saber que, años después,\nvan a convertirse en pequeñas pruebas\nde que algo fue real.",
         "Por eso preferí guardarlas juntas.",
         "No como una galería.\nSino como una caja fuerte."
-      ],
-      "cta": "Continúa para abrirla"
+      ]
     },
     {
       "id": "caja-fuerte",
@@ -459,13 +458,19 @@
             "id": 32,
             "type": "video",
             "src": "/memories/32.mp4",
-            "caption": "Recuerdo guardado en la caja fuerte."
+            "caption": "Estas canciones suenan en mis días desde que te volví a ver."
           },
           {
             "id": 33,
             "type": "video",
             "src": "/memories/33.mp4",
-            "caption": "Recuerdo guardado en la caja fuerte."
+            "caption": "Estas canciones suenan en mis días desde que te volví a ver."
+          },
+          {
+            "id": 34,
+            "type": "video",
+            "src": "/memories/34.mp4",
+            "caption": "Esta canción te la dediqué una vez y siempre será tuya."
           }
         ],
         "optionalVideo": null
@@ -529,9 +534,33 @@
     },
     {
       "id": "final",
-      "number": 9,
+      "number": 8,
       "title": "Mensaje Final",
       "signature": "Hecho con cariño y demasiados recuerdos guardados.",
+      "timelineMontage": {
+        "eyebrow": "Universo · línea del tiempo",
+        "title": "Universo de Shere",
+        "subtitle": "Una línea del tiempo hecha de recuerdos",
+        "introTitle": "Abriendo el universo",
+        "introText": "Cada recuerdo encontró su lugar entre las estrellas.",
+        "outroTitle": "Feliz cumpleaños Shere",
+        "outroText": "Todas las líneas del tiempo llegaron a ti.",
+        "finalText": "Todas las líneas del tiempo llegaron a ti.",
+        "memoryLabel": "Recuerdo",
+        "music": "/memories/audio_lineaTiempo.mp3",
+        "timelineMusicVolume": 0.18,
+        "rewindMusic": "/memories/audio_rewind.mp3",
+        "rewindMusicVolume": 0.62,
+        "birthdayMusic": "/memories/feliz-cumpleanos.mp3",
+        "birthdayMusicVolume": 0.22,
+        "birthdayImage": "/memories/shere-foto.png",
+        "durationPerMemory": 2500,
+        "lastMemoryDurationMs": 5000,
+        "maxVideoDurationMs": 30000,
+        "rewindDuration": 4000,
+        "autoPlay": true,
+        "enableThreeBackground": true
+      },
       "letter": {
         "buttonLabel": "Leer la carta completa",
         "title": "Carta para Shere",
@@ -539,8 +568,7 @@
       },
       "lines": [
         "Gracias por haber estado en tantos capítulos importantes de mi vida — desde ese bus hasta el Parque de la Shere, desde Loki en mis piernas hasta las mascarillas en mi casa.",
-        "Gracias por seguir siendo alguien a quien me alegra encontrar, después de todos estos años. Te queda bonito todo lo que haces — y lo digo en serio, no solo en una canción.",
-        "Feliz cumpleaños, Shere."
+        "Gracias por seguir siendo alguien a quien me alegra encontrar, después de todos estos años. Te queda bonito todo lo que haces — y lo digo en serio, no solo en una canción."
       ]
     }
   ]

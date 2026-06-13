@@ -1,24 +1,33 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
+import UniverseTimelineMontage from '../components/UniverseTimelineMontage'
+import VaultSection from '../components/VaultSection'
 import content from '../data/content.json'
 
 export default function Chapter10Final() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
   const finalChapter = content.chapters.find(c => c.id === 'final')
-  const { lines, signature, letter, number } = finalChapter
+  const vaultChapter = content.chapters.find(c => c.id === 'caja-fuerte')
+  const { lines, signature, letter, timelineMontage, number, title } = finalChapter
+  const memories = vaultChapter.vaultView.memories || []
   const year = content.meta.year
   const [letterOpen, setLetterOpen] = useState(false)
+  const [timelineOpen, setTimelineOpen] = useState(false)
+
+  const handleCloseVault = () => {
+    setTimelineOpen(true)
+  }
 
   return (
     <section
       ref={ref}
       className="chapter-section flex flex-col items-center justify-center"
       style={{
-        background: '#000',
+        background: 'linear-gradient(180deg, #000 0%, #040408 40%, #080610 70%, #040408 100%)',
         minHeight: '100vh',
         paddingTop: '60px',
-        paddingBottom: '60px',
+        paddingBottom: '80px',
       }}
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -39,22 +48,27 @@ export default function Chapter10Final() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center w-full">
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1 }}
-          className="mb-16"
+          className="mb-6"
         >
           <span className="font-mono text-xs tracking-[0.4em]" style={{ color: 'var(--gold)', opacity: 0.5 }}>
             CAPÍTULO {String(number).padStart(2, '0')}
           </span>
+          {title && (
+            <h2 className="font-display text-xl md:text-2xl italic mt-4" style={{ color: 'var(--gold-light)' }}>
+              {title}
+            </h2>
+          )}
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
           className="mb-16"
         >
           <motion.button
@@ -75,46 +89,16 @@ export default function Chapter10Final() {
 
         <div className="space-y-12">
           {lines.map((line, i) => (
-            <motion.div
+            <motion.p
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 1.2 + 0.5, duration: 1.5, ease: 'easeOut' }}
+              className="font-body text-lg md:text-xl leading-relaxed"
+              style={{ color: 'var(--warm-gray)', fontStyle: 'italic' }}
             >
-              {i < lines.length - 1 ? (
-                <p
-                  className="font-body text-lg md:text-xl leading-relaxed"
-                  style={{ color: 'var(--warm-gray)', fontStyle: 'italic' }}
-                >
-                  {line}
-                </p>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={inView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ delay: lines.length * 1.2, duration: 2, ease: 'easeOut' }}
-                >
-                  <div className="h-px mb-10" style={{
-                    background: 'linear-gradient(90deg, transparent, var(--gold), transparent)',
-                    opacity: 0.4,
-                  }} />
-                  <h2
-                    className="font-display"
-                    style={{
-                      fontSize: 'clamp(2rem, 6vw, 4rem)',
-                      fontStyle: 'italic',
-                      fontWeight: 700,
-                      background: 'linear-gradient(135deg, #c9a84c, #e8c97a, #c9a84c)',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
-                      backgroundClip: 'text',
-                    }}
-                  >
-                    {line}
-                  </h2>
-                </motion.div>
-              )}
-            </motion.div>
+              {line}
+            </motion.p>
           ))}
         </div>
 
@@ -137,6 +121,8 @@ export default function Chapter10Final() {
             — {year} —
           </p>
         </motion.div>
+
+        <VaultSection onVaultClose={handleCloseVault} inView={inView} />
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -239,6 +225,13 @@ export default function Chapter10Final() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <UniverseTimelineMontage
+        isOpen={timelineOpen}
+        onClose={() => setTimelineOpen(false)}
+        memories={memories}
+        config={timelineMontage}
+      />
     </section>
   )
 }

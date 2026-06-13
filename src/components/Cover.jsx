@@ -224,16 +224,17 @@ export default function Cover({ onOpen }) {
               )}
             </AnimatePresence>
 
-            {/* Bottom hint */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 3.5, duration: 1 }}
-              className="mt-16 font-mono text-xs"
-              style={{ color: 'var(--text-dim)', letterSpacing: '0.2em' }}
-            >
-              {isUnlocked ? '↓ desplázate para explorar' : unlock.waitingHint}
-            </motion.p>
+            {!isUnlocked && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 3.5, duration: 1 }}
+                className="mt-16 font-mono text-xs"
+                style={{ color: 'var(--text-dim)', letterSpacing: '0.2em' }}
+              >
+                {unlock.waitingHint}
+              </motion.p>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

@@ -8,10 +8,6 @@ export default function Chapter8BeforeVault() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
   const chapter = content.chapters.find(c => c.id === 'antes-de-abrir')
 
-  const scrollToVault = () => {
-    document.querySelectorAll('.chapter-section')[chapter.number]?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <section
       ref={ref}
@@ -64,29 +60,14 @@ export default function Chapter8BeforeVault() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-16 flex flex-col items-center gap-6"
+          className="mt-16 flex flex-col items-center"
         >
           <div className="h-px w-24" style={{ background: 'linear-gradient(90deg, transparent, var(--gold), transparent)', opacity: 0.35 }} />
-
-          <motion.button
-            onClick={scrollToVault}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="font-mono text-xs tracking-widest uppercase px-8 py-4 cursor-pointer"
-            style={{
-              border: '1px solid rgba(201,168,76,0.35)',
-              color: 'var(--gold)',
-              background: 'rgba(201,168,76,0.06)',
-              letterSpacing: '0.25em',
-            }}
-          >
-            {chapter.cta}
-          </motion.button>
 
           <motion.p
             animate={{ opacity: [0.3, 0.7, 0.3], y: [0, 4, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="font-mono text-xs tracking-widest"
+            className="font-mono text-xs tracking-widest mt-6"
             style={{ color: 'var(--text-dim)' }}
           >
             ↓

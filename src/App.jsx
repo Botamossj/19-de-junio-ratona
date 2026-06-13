@@ -9,7 +9,6 @@ import Chapter4Marvel from './chapters/Chapter4Marvel'
 import Chapter6Loki from './chapters/Chapter6Loki'
 import Chapter7Admiration from './chapters/Chapter7Admiration'
 import Chapter8BeforeVault from './chapters/Chapter8BeforeVault'
-import Chapter9Vault from './chapters/Chapter9Vault'
 import Chapter10Final from './chapters/Chapter10Final'
 
 export default function App() {
@@ -76,7 +75,6 @@ export default function App() {
             <Chapter6Loki />
             <Chapter7Admiration />
             <Chapter8BeforeVault />
-            <Chapter9Vault />
             <Chapter10Final />
           </motion.div>
         )}
