@@ -1,23 +1,89 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect, useCallback } from 'react'
 import UniverseTimelineMontage from '../components/UniverseTimelineMontage'
 import VaultSection from '../components/VaultSection'
+import useUnlockCountdown from '../hooks/useUnlockCountdown'
 import content from '../data/content.json'
+
+const COUNTDOWN_UNITS = [
+  { key: 'days', label: 'días' },
+  { key: 'hours', label: 'horas' },
+  { key: 'minutes', label: 'min' },
+  { key: 'seconds', label: 'seg' },
+]
+
+function TimelineCountdown({ onComplete }) {
+  const unlock = content.meta.unlock
+  const { isUnlocked, remaining } = useUnlockCountdown()
+
+  useEffect(() => {
+    if (isUnlocked) onComplete()
+  }, [isUnlocked, onComplete])
+
+  if (isUnlocked) return null
+
+  return (
+    <motion.div
+      className="fixed inset-0 flex flex-col items-center justify-center px-6 text-center"
+      style={{ zIndex: 125, background: 'rgba(0,0,0,0.92)', backdropFilter: 'blur(10px)' }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <p className="font-mono text-xs tracking-[0.3em] uppercase mb-4" style={{ color: 'var(--gold)', opacity: 0.8 }}>
+        {unlock.countdownLabel}
+      </p>
+      <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+        {COUNTDOWN_UNITS.map(({ key, label }) => (
+          <div
+            key={key}
+            className="flex flex-col items-center justify-center px-3 py-4 md:px-4 md:py-5 min-w-[4.5rem]"
+            style={{ border: '1px solid rgba(201,168,76,0.35)', background: 'rgba(0,0,0,0.35)' }}
+          >
+            <span className="font-mono text-2xl md:text-3xl tabular-nums" style={{ color: 'var(--gold-light)' }}>
+              {String(remaining[key]).padStart(2, '0')}
+            </span>
+            <span className="font-mono text-[0.6rem] md:text-xs mt-1 uppercase tracking-widest" style={{ color: 'var(--text-dim)' }}>
+              {label}
+            </span>
+          </div>
+        ))}
+      </div>
+      <p className="mt-6 font-body text-sm max-w-sm" style={{ color: 'var(--warm-gray)', opacity: 0.85 }}>
+        {unlock.lockedHint}
+      </p>
+    </motion.div>
+  )
+}
 
 export default function Chapter10Final() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+  const { isUnlocked } = useUnlockCountdown()
   const finalChapter = content.chapters.find(c => c.id === 'final')
   const vaultChapter = content.chapters.find(c => c.id === 'caja-fuerte')
   const { lines, signature, letter, timelineMontage, number, title } = finalChapter
   const memories = vaultChapter.vaultView.memories || []
   const year = content.meta.year
   const [letterOpen, setLetterOpen] = useState(false)
-  const [timelineOpen, setTimelineOpen] = useState(false)
+  const [stage, setStage] = useState(null)
+
+  const startTimelineExperience = useCallback(() => {
+    if (isUnlocked) setStage('timeline')
+    else setStage('countdown')
+  }, [isUnlocked])
+
+  const handleCountdownComplete = useCallback(() => {
+    setStage('timeline')
+  }, [])
 
   const handleCloseVault = () => {
-    setTimelineOpen(true)
+    startTimelineExperience()
   }
+
+  const handleTimelineClose = useCallback(() => {
+    setStage(null)
+  }, [])
 
   return (
     <section
@@ -226,12 +292,20 @@ export default function Chapter10Final() {
         )}
       </AnimatePresence>
 
-      <UniverseTimelineMontage
-        isOpen={timelineOpen}
-        onClose={() => setTimelineOpen(false)}
-        memories={memories}
-        config={timelineMontage}
-      />
+      <AnimatePresence>
+        {stage === 'countdown' && (
+          <TimelineCountdown key="timeline-countdown" onComplete={handleCountdownComplete} />
+        )}
+      </AnimatePresence>
+
+      {stage === 'timeline' && (
+        <UniverseTimelineMontage
+          isOpen
+          onClose={handleTimelineClose}
+          memories={memories}
+          config={timelineMontage}
+        />
+      )}
     </section>
   )
 }

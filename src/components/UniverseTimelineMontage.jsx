@@ -398,12 +398,48 @@ function Controls({ paused, onToggle, onClose }) {
 }
 
 /* ════════════════ INTRO ════════════════ */
-function IntroScreen() {
+function IntroScreen({ config = {} }) {
   return (
-    <motion.div className="absolute inset-0 flex flex-col items-center justify-center" style={{ zIndex: 50 }}
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, filter: 'blur(16px)', scale: 1.1 }} transition={{ duration: 1, ease: EASE }}>
-      <motion.div className="absolute left-0 right-0" style={{ top: '50%', height: 2, background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.purpleL}, transparent)`, boxShadow: `0 0 20px ${C.gold}` }}
-        initial={{ scaleX: 0, opacity: 0 }} animate={{ scaleX: 1, opacity: 1 }} transition={{ duration: 1.4, ease: EASE }} />
+    <motion.div
+      className="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+      style={{ zIndex: 50 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, filter: 'blur(16px)', scale: 1.1 }}
+      transition={{ duration: 1, ease: EASE }}
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: 22, scale: 0.92 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ delay: 0.35, duration: 1, ease: EASE }}
+        className="font-serif italic"
+        style={{
+          fontSize: 'clamp(2rem, 7vw, 3.8rem)',
+          lineHeight: 1.12,
+          color: C.goldL,
+          background: `linear-gradient(135deg, ${C.gold}, ${C.goldL}, ${C.purpleL})`,
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          filter: 'drop-shadow(0 0 22px rgba(201,168,76,0.35))',
+        }}
+      >
+        {config.title || 'Universo de Shere'}
+      </motion.h2>
+
+      <motion.div
+        className="absolute left-0 right-0"
+        style={{
+          top: '50%',
+          height: 2,
+          zIndex: -1,
+          background: `linear-gradient(90deg, transparent, ${C.gold}, ${C.purpleL}, transparent)`,
+          boxShadow: `0 0 20px ${C.gold}`,
+        }}
+        initial={{ scaleX: 0, opacity: 0 }}
+        animate={{ scaleX: 1, opacity: 1 }}
+        transition={{ duration: 1.4, ease: EASE }}
+      />
     </motion.div>
   )
 }
@@ -493,8 +529,9 @@ function BirthdayFinal({ config, onClose, onReplay }) {
 }
 
 /* ════════════════ COMPONENTE PRINCIPAL ════════════════ */
-export default function UniverseTimelineMontage({ isOpen, onClose, memories = [], config = {} }) {
+export default function UniverseTimelineMontage({ isOpen, onClose, onReplayFromStart, memories = [], config = {} }) {
   const layout = useLayout()
+  const [sessionKey, setSessionKey] = useState(0)
   const [phase, setPhase] = useState('intro') // intro | playing | rewind | birthdayFinal
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
@@ -589,22 +626,16 @@ export default function UniverseTimelineMontage({ isOpen, onClose, memories = []
   }, [])
 
   const replay = useCallback(() => {
+    if (onReplayFromStart) {
+      onReplayFromStart()
+      return
+    }
     if (birthdayAudioRef.current) {
       birthdayAudioRef.current.pause()
       birthdayAudioRef.current = null
     }
-    if (rewindCtrl.current) rewindCtrl.current.stop()
-    rewindProgress.set(1)
-    trackXMV.set(0)
-    setIndex(0); setPaused(false); setPhase('playing')
-    const a = audioRef.current
-    if (a) {
-      a.currentTime = 0
-      a.volume = 0
-      a.play().catch(() => {})
-      fadeAudio(a, timelineVol, 1200)
-    }
-  }, [trackXMV, rewindProgress, timelineVol])
+    setSessionKey((k) => k + 1)
+  }, [onReplayFromStart])
 
   /* Mover el track suavemente cuando cambia el recuerdo (fase playing) */
   useEffect(() => {
@@ -634,7 +665,7 @@ export default function UniverseTimelineMontage({ isOpen, onClose, memories = []
       document.body.style.overflow = ''
       if (audioRef.current) { audioRef.current.pause(); audioRef.current = null }
     }
-  }, [isOpen, config.music, timelineVol])
+  }, [isOpen, config.music, timelineVol, sessionKey])
 
   /* Música de cumpleaños al final */
   useEffect(() => {
@@ -709,7 +740,7 @@ export default function UniverseTimelineMontage({ isOpen, onClose, memories = []
 
   return (
     <AnimatePresence>
-      <motion.div className="fixed inset-0 overflow-hidden" style={{ zIndex: 120, background: C.bg, fontFamily: 'Georgia, serif' }}
+      <motion.div className="fixed inset-0 overflow-hidden w-full max-w-[100vw] min-h-[100dvh]" style={{ zIndex: 120, background: C.bg, fontFamily: 'Georgia, serif' }}
         initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8 }}
         role="dialog" aria-label={config.title || 'Universo de recuerdos'}>
 
@@ -741,8 +772,10 @@ export default function UniverseTimelineMontage({ isOpen, onClose, memories = []
         )}
 
         <AnimatePresence>
-          {phase === 'intro' && <IntroScreen key="intro" />}
-          {phase === 'birthdayFinal' && <BirthdayFinal key="bday" config={config} onClose={onClose} onReplay={replay} />}
+          {phase === 'intro' && <IntroScreen key="intro" config={config} />}
+          {phase === 'birthdayFinal' && (
+            <BirthdayFinal key="bday" config={config} onClose={onClose} onReplay={replay} />
+          )}
         </AnimatePresence>
       </motion.div>
     </AnimatePresence>

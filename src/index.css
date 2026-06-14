@@ -24,6 +24,14 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  width: 100%;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
 }
 
 body {
@@ -31,22 +39,37 @@ body {
   color: var(--warm-white);
   font-family: 'Lora', Georgia, serif;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Film grain overlay */
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* Film grain overlay — detrás del contenido, no encima */
 body::before {
   content: '';
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
   opacity: 0.06;
-  animation: filmGrain 0.8s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: filmGrain 0.8s steps(2) infinite;
+  }
 }
 
 @keyframes filmGrain {
@@ -84,8 +107,48 @@ body::before {
 /* Chapter sections */
 .chapter-section {
   min-height: 100vh;
+  min-height: 100dvh;
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .cover-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cover-content--instant,
+  .cover-content--instant * {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  .cover-title {
+    -webkit-text-fill-color: var(--gold-light) !important;
+    color: var(--gold-light) !important;
+    background: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cover-content:not(.cover-content--instant) {
+    animation: coverFadeIn 1.2s ease forwards;
+  }
+
+  .cover-content:not(.cover-content--instant) .cover-line {
+    animation: coverLineIn 0.8s ease 0.6s forwards;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes coverFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes coverLineIn {
+  to { transform: scaleX(1); }
 }
 
 /* Gold gradient text */
@@ -94,6 +157,13 @@ body::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: var(--gold-light);
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .text-gold-gradient {
+    color: transparent;
+  }
 }
 
 /* Polaroid effect */

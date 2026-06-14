@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Cover from './components/Cover'
+import CinematicLettersIntro from './components/CinematicLettersIntro'
 import NavProgress from './components/NavProgress'
 import Chapter1Route from './chapters/Chapter1Route'
 import Chapter2Ruler from './chapters/Chapter2Ruler'
@@ -10,15 +11,24 @@ import Chapter6Loki from './chapters/Chapter6Loki'
 import Chapter7Admiration from './chapters/Chapter7Admiration'
 import Chapter8BeforeVault from './chapters/Chapter8BeforeVault'
 import Chapter10Final from './chapters/Chapter10Final'
+import content from './data/content.json'
 
 export default function App() {
-  const [coverDismissed, setCoverDismissed] = useState(false)
+  const [appStage, setAppStage] = useState('cover')
   const [currentChapter, setCurrentChapter] = useState(0)
+  const [introKey, setIntroKey] = useState(0)
   const mainRef = useRef(null)
 
-  // Track scroll position to update nav
+  const introConfig = useMemo(() => {
+    const finalChapter = content.chapters.find((c) => c.id === 'final')
+    return {
+      ...content.meta.heroIntro,
+      ...finalChapter?.timelineMontage,
+    }
+  }, [])
+
   useEffect(() => {
-    if (!coverDismissed) return
+    if (appStage !== 'chapters') return
 
     const handleScroll = () => {
       const sections = document.querySelectorAll('.chapter-section')
@@ -35,20 +45,31 @@ export default function App() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [coverDismissed])
+  }, [appStage])
 
   const handleOpen = () => {
-    setCoverDismissed(true)
+    if (introConfig.cinematicIntroEnabled === false) {
+      setAppStage('chapters')
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 300)
+      return
+    }
+    setIntroKey((k) => k + 1)
+    setAppStage('intro')
+  }
+
+  const handleIntroComplete = () => {
+    setAppStage('chapters')
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, 300)
   }
 
   return (
-    <div>
-      {/* Cover screen */}
+    <div className="w-full min-h-[100dvh] overflow-x-hidden">
       <AnimatePresence>
-        {!coverDismissed && (
+        {appStage === 'cover' && (
           <motion.div
             exit={{ opacity: 0, scale: 1.05 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
@@ -58,9 +79,18 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Main content */}
       <AnimatePresence>
-        {coverDismissed && (
+        {appStage === 'intro' && (
+          <CinematicLettersIntro
+            key={`cinematic-intro-${introKey}`}
+            config={introConfig}
+            onComplete={handleIntroComplete}
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {appStage === 'chapters' && (
           <motion.div
             ref={mainRef}
             initial={{ opacity: 0 }}

@@ -14,6 +14,24 @@
       "countdownLabel": "Faltan",
       "unlockedHint": "Ya es momento.",
       "waitingHint": "Vuelve ese día."
+    },
+    "heroIntro": {
+      "heroName": "SHERE",
+      "heroSubtitle": "Un universo hecho de recuerdos",
+      "heroIntroDuration": 6500,
+      "heroAudio": "/memories/audiointroMarvel.mp3",
+      "heroAudioVolume": 0.88,
+      "heroImages": [
+        "/memories/shere1.jpeg",
+        "/memories/shere2.jpeg",
+        "/memories/shere3.jpeg",
+        "/memories/shere4.jpeg",
+        "/memories/shere5.jpeg",
+        "/memories/shere6.jpeg",
+        "/memories/shere7.jpeg",
+        "/memories/shere8.jpeg",
+        "/memories/shere9.jpeg"
+      ]
     }
   },
   "chapters": [
@@ -559,7 +577,36 @@
         "maxVideoDurationMs": 30000,
         "rewindDuration": 4000,
         "autoPlay": true,
-        "enableThreeBackground": true
+        "enableThreeBackground": true,
+        "cinematicIntroEnabled": true,
+        "cinematicIntroDuration": 30000,
+        "cinematicIntroAudio": "/memories/audiointroMarvel.mp3",
+        "cinematicIntroAudioVolume": 0.88,
+        "montageComicImages": [
+          "/memories/shere1comic.png",
+          "/memories/shere2comic.png",
+          "/memories/shere3comic.png",
+          "/memories/shere4comic.png",
+          "/memories/shere5comic.png",
+          "/memories/shere6comic.png",
+          "/memories/shere7comic.png",
+          "/memories/shere8comic.png",
+          "/memories/shere9comic.png"
+        ],
+        "letterImages": [
+          "/memories/shere1.jpeg",
+          "/memories/shere2.jpeg",
+          "/memories/shere3.jpeg",
+          "/memories/shere4.jpeg",
+          "/memories/shere5.jpeg",
+          "/memories/shere6.jpeg",
+          "/memories/shere7.jpeg",
+          "/memories/shere8.jpeg",
+          "/memories/shere9.jpeg"
+        ],
+        "heroName": "SHERE",
+        "heroSubtitle": "Un universo hecho de recuerdos",
+        "birthdayRevealText": "Feliz cumpleaños Shere"
       },
       "letter": {
         "buttonLabel": "Leer la carta completa",
