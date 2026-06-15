@@ -561,7 +561,7 @@
         "subtitle": "Una línea del tiempo hecha de recuerdos",
         "introTitle": "Abriendo el universo",
         "introText": "Cada recuerdo encontró su lugar entre las estrellas.",
-        "outroTitle": "Feliz cumpleaños Shere",
+        "outroTitle": "Feliz cumpleaños",
         "outroText": "Todas las líneas del tiempo llegaron a ti.",
         "finalText": "Todas las líneas del tiempo llegaron a ti.",
         "memoryLabel": "Recuerdo",
@@ -606,7 +606,7 @@
         ],
         "heroName": "SHERE",
         "heroSubtitle": "Un universo hecho de recuerdos",
-        "birthdayRevealText": "Feliz cumpleaños Shere"
+        "birthdayRevealText": "Feliz cumpleaños"
       },
       "letter": {
         "buttonLabel": "Leer la carta completa",

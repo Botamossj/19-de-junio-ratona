@@ -230,7 +230,7 @@ export default function CinematicLettersIntro({ config = {}, onComplete }) {
 
   const duration = config.cinematicIntroDuration ?? DURATION_MS
   const heroName = (config.heroName || 'SHERE').toUpperCase()
-  const birthdayText = config.birthdayRevealText || config.outroTitle || 'Feliz cumpleaños Shere'
+  const birthdayText = config.birthdayRevealText || config.outroTitle || 'Feliz cumpleaños'
   const comicImages = useMemo(() => getComicSources(config), [config])
   const letterImages = useMemo(() => getLetterSources(config), [config])
   const letters = heroName.split('')

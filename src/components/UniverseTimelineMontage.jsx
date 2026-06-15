@@ -513,7 +513,7 @@ function BirthdayFinal({ config, onClose, onReplay }) {
         </motion.div>
         <motion.h2 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.9 }} className="font-serif italic"
           style={{ fontSize: 'clamp(2rem,7vw,4rem)', lineHeight: 1.15, background: `linear-gradient(135deg, ${C.gold}, ${C.purpleL}, ${C.pink}, ${C.goldL})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', filter: 'drop-shadow(0 0 24px rgba(201,168,76,0.35))' }}>
-          {config.outroTitle || 'Feliz cumpleaños Shere'}
+          {config.outroTitle || 'Feliz cumpleaños'}
         </motion.h2>
         <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.9 }} className="font-serif italic mt-5"
           style={{ fontSize: 'clamp(0.9rem,2.4vw,1.15rem)', color: 'rgba(245,240,232,0.7)', maxWidth: 460, margin: '0 auto', lineHeight: 1.65 }}>
