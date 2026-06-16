@@ -6,8 +6,12 @@ const FONT = 'Impact, Anton, "Arial Black", sans-serif'
 const GOLD = '#e8c97a'
 const DURATION_MS = 30000
 
-const DEFAULT_COMIC_IMAGES = Array.from({ length: 9 }, (_, i) => `/memories/shere${i + 1}comic.png`)
-const DEFAULT_LETTER_IMAGES = Array.from({ length: 9 }, (_, i) => `/memories/shere${i + 1}.jpeg`)
+const DEFAULT_COMIC_IMAGES = [
+  ...Array.from({ length: 9 }, (_, i) => `/memories/shere${i + 1}comic.png`),
+  '/memories/shere10_comic.png',
+  '/memories/shere11_comic.png',
+]
+const DEFAULT_LETTER_IMAGES = Array.from({ length: 11 }, (_, i) => `/memories/shere${i + 1}.jpeg`)
 
 /* 30s: montaje 0–10s | letras+rojo 10–22s | glow 22–28s | flash 28–30s */
 const PHASE_TIMES = {

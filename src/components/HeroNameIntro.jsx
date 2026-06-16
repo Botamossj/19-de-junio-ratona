@@ -6,7 +6,7 @@ const FLIP_STAGGER = 0.11
 const FLIP_DURATION = 0.34
 const FONT = 'Arial Black, Impact, sans-serif'
 
-const DEFAULT_IMAGES = Array.from({ length: 9 }, (_, i) => `/memories/shere${i + 1}.jpeg`)
+const DEFAULT_IMAGES = Array.from({ length: 11 }, (_, i) => `/memories/shere${i + 1}.jpeg`)
 
 /** Bloque de letra estilo Marvel: flip 3D + flipbook de fotos dentro del recorte */
 function MarvelLetterBlock({ char, images, index }) {

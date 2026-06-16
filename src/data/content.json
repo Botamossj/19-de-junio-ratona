@@ -30,7 +30,9 @@
         "/memories/shere6.jpeg",
         "/memories/shere7.jpeg",
         "/memories/shere8.jpeg",
-        "/memories/shere9.jpeg"
+        "/memories/shere9.jpeg",
+        "/memories/shere10.jpeg",
+        "/memories/shere11.jpeg"
       ]
     }
   },
@@ -591,7 +593,9 @@
           "/memories/shere6comic.png",
           "/memories/shere7comic.png",
           "/memories/shere8comic.png",
-          "/memories/shere9comic.png"
+          "/memories/shere9comic.png",
+          "/memories/shere10_comic.png",
+          "/memories/shere11_comic.png"
         ],
         "letterImages": [
           "/memories/shere1.jpeg",
@@ -602,7 +606,9 @@
           "/memories/shere6.jpeg",
           "/memories/shere7.jpeg",
           "/memories/shere8.jpeg",
-          "/memories/shere9.jpeg"
+          "/memories/shere9.jpeg",
+          "/memories/shere10.jpeg",
+          "/memories/shere11.jpeg"
         ],
         "heroName": "SHERE",
         "heroSubtitle": "Un universo hecho de recuerdos",
