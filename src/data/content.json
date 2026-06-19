@@ -7,10 +7,10 @@
     "year": 2026,
     "unlock": {
       "date": "2026-06-19",
-      "hour": 12,
-      "minute": 30,
+      "hour": 14,
+      "minute": 0,
       "timezoneLabel": "hora Ecuador",
-      "lockedHint": "Se abrirá el 19 de junio, a las 12:30 de la tarde.",
+      "lockedHint": "Se abrirá el 19 de junio, a las 2:00 de la tarde.",
       "countdownLabel": "Faltan",
       "unlockedHint": "Ya es momento.",
       "waitingHint": "Vuelve ese día."
